@@ -1,4 +1,4 @@
-import Http.HttpClient;
+import http.HttpClient;
 
 import java.io.IOException;
 
@@ -8,9 +8,7 @@ public class Main {
         HttpClient client = new HttpClient();
         try {
             System.out.println(client.fetch("https://pokeapi.co/api/v2/pokemon/charizard"));
-
-            for ( int i = 1 ;i <= 100;i++)
-                System.out.println(client.fetch("https://pokeapi.co/api/v2/pokemon/"+i));
+            System.out.println(client.fetch("https://pokeapi.co/api/v2/pokemon?limit=100"));
 
         } catch (IOException e) {
             e.printStackTrace();
